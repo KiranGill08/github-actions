@@ -21,6 +21,7 @@ jobs:
           git config user.name github-actions
           git config user.email gillkiranpreet98@gmail.com
           git add .
+          git status
           git push
         env:
           GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
