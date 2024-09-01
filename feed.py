@@ -12,7 +12,7 @@ with open ('feed.yaml', 'r') as file:
 
 channel_element = xml_tree.SubElement(rss_element,'channel')
 
-##for managing the link for the tree
+##for managing the link for the tree in the flow
 link_prefix = yaml_data['link']
 
 
