@@ -18,11 +18,14 @@ jobs:
         run: python feed.py
       - name: Push Repo
         run: |
-          git config user.name github-actions
-          git config user.email gillkiranpreet98@gmail.com
-          git add feed.py
-          git commit  -m "Update Feed.py"
-          git push
+         # Check for changes
+          if [[ $(git status --porcelain) ]]; then
+            git add .
+            git commit -m "Adding Files"
+            git push
+          else
+            echo "No changes to commit"
+          fi
         env:
           GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
           
